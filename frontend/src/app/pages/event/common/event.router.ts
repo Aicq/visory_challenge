@@ -1,15 +1,15 @@
-import {RouterModule, Routes} from "@angular/router";
+import {RouterModule, Routes} from '@angular/router';
 
-import {EventComponent} from "../event.component";
+import {EventComponent} from '../event.component';
 
 const EventRouter: Routes = [
     {
-        path: "",
+        path: '',
         component: EventComponent,
         children: [
             {
-                path: "",
-                loadChildren: async () => (await import("../pages/event-list/common/event-list.module")).EventListModule,
+                path: '',
+                loadChildren: async () => (await import('../pages/event-list/common/event-list.module')).EventListModule,
             },
         ]
     }

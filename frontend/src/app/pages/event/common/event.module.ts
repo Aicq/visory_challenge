@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 
 import EventRouter from './event.router';
 import {EventComponent} from '../event.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
 
 @NgModule({
     declarations: [

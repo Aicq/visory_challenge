@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
 
-import {Observable} from "rxjs";
-import {map} from "rxjs/operators";
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
-import {ticketMasterApiKey, ticketMasterApiUrl} from "./event.constants";
-import {EventModel} from "./event.models";
-import {DateHelper} from "../../../common/helpers/date-helper";
+import {ticketMasterApiKey, ticketMasterApiUrl} from './event.constants';
+import {EventModel} from './event.models';
+import {DateHelper} from '../../../common/helpers/date-helper';
 
 @Injectable({
     providedIn: 'root',
@@ -20,13 +20,13 @@ export class EventService {
         let startDateTimeQuery = '';
         let endDateTimeQuery = '';
         if (eventLocationCountryCode) {
-            countryCodeQuery = `countryCode=${eventLocationCountryCode}`
+            countryCodeQuery = `countryCode=${eventLocationCountryCode}`;
         }
         if (startDateTime) {
-            startDateTimeQuery = `startDateTime=${DateHelper.getTicketMasterFormattedDateString(startDateTime)}`
+            startDateTimeQuery = `startDateTime=${DateHelper.getTicketMasterFormattedDateString(startDateTime)}`;
         }
         if (endDateTime) {
-            endDateTimeQuery = `endDateTime=${DateHelper.getTicketMasterFormattedDateString(endDateTime)}`
+            endDateTimeQuery = `endDateTime=${DateHelper.getTicketMasterFormattedDateString(endDateTime)}`;
         }
         const requestUrl = `${ticketMasterApiUrl}${countryCodeQuery}&${startDateTimeQuery}&${endDateTimeQuery}&apikey=${ticketMasterApiKey}`;
 

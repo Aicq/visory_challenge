@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Observable} from "rxjs";
-import {tap} from "rxjs/operators";
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
 
-import {TextConstants} from "../../../../common/constants/text.constants";
-import {EventService} from "../../common/event.service";
-import {EventModel} from "../../common/event.models";
-import {eventLocations} from "../../common/event.constants";
-import {EventLocation} from "../../common/event.interfaces";
+import {TextConstants} from '../../../../common/constants/text.constants';
+import {EventService} from '../../common/event.service';
+import {EventModel} from '../../common/event.models';
+import {eventLocations} from '../../common/event.constants';
+import {EventLocation} from '../../common/event.interfaces';
 
 @Component({
     templateUrl: './event-list.component.html',

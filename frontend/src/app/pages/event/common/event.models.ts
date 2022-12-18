@@ -1,4 +1,4 @@
-import {EventAccessibility, EventPromoter, EventTicketLimit} from "./event.interfaces";
+import {EventAccessibility, EventPromoter, EventTicketLimit} from './event.interfaces';
 
 export class EventModel {
     accessibility: EventAccessibility;
