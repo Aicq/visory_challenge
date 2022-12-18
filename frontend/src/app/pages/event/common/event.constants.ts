@@ -13,16 +13,8 @@ export const eventLocations: EventLocation[] = [
 		label: 'Canada'
 	},
 	{
-		countryCode: 'FR',
-		label: 'France'
-	},
-	{
 		countryCode: 'DE',
 		label: 'Germany'
-	},
-	{
-		countryCode: 'JP',
-		label: 'Japan'
 	},
 	{
 		countryCode: 'NZ',
