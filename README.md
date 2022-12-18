@@ -3,4 +3,4 @@
 2. Navigate to visory_challenge/frontend in terminal
 3. Run "npm i"
 4. Run "npm start"
-
+5. Navigate to http://localhost:4200/ 
