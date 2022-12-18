@@ -2,13 +2,17 @@
 <div class="d-flex my-2 justify-content-between">
     <!-- Filter inputs -->
     <div class="d-flex">
+        <!-- NOTE I would have set these inputs to type="datetime-local" however, it seems it is
+             not fully support by FireFox yet https://github.com/mdn/browser-compat-data/issues/16138
+             It seems to still be missing the time input and my change events also were not firing (Firefox only).
+             Leaving as type="date" for now.-->
         <div>
             <label>{{textConstants.startDate}}</label>
-            <input [(ngModel)]="startDateTime" (change)="setEvents()" type="datetime-local" class="form-control">
+            <input [(ngModel)]="startDateTime" (change)="setEvents()" type="date" class="form-control">
         </div>
         <div class="ml-3">
             <label>{{textConstants.endDate}}</label>
-            <input [(ngModel)]="endDateTime" (change)="setEvents()" type="datetime-local" class="form-control">
+            <input [(ngModel)]="endDateTime" (change)="setEvents()" type="date" class="form-control">
         </div>
     </div>
 
