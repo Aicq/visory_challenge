@@ -50,7 +50,6 @@ export class EventListComponent implements OnInit {
             this.endDateTime
         ).pipe(
             tap((events: EventModel[]) => {
-                console.log(events);
                 this.events = events;
             })
         );
