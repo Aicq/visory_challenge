@@ -32,7 +32,11 @@ export class EventService {
 
         return this.http.get<any>(requestUrl, {}).pipe(
             map((eventsResponse) => {
-                return eventsResponse._embedded.events.map((event) => new EventModel(event));
+                if (eventsResponse && eventsResponse._embedded && eventsResponse._embedded.events) {
+                    return eventsResponse._embedded.events.map((event) => new EventModel(event));
+                } else {
+                    return [];
+                }
             })
         );
     }

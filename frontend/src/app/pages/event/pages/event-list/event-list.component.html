@@ -46,6 +46,9 @@
         </div>
     </div>
 </div>
+<div *ngIf="!events || !events.length">
+    {{textConstants.noEventsFound}}
+</div>
 <ng-container *ngIf="eventsObservable | async"></ng-container>
 
 
