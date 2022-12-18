@@ -1,0 +1,13 @@
+.location-dropdown {
+    width: 200px;
+}
+
+.event-image {
+    max-width: 100%;
+}
+
+:host ::ng-deep {
+    a {
+        color: white;
+    }
+}

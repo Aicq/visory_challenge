@@ -1,0 +1,47 @@
+<h1 class="text-capitalize">{{textConstants.events}}</h1>
+<div class="d-flex my-2 justify-content-between">
+    <!-- Filter inputs -->
+    <div class="d-flex">
+        <div>
+            <label>{{textConstants.startDate}}</label>
+            <input [(ngModel)]="startDateTime" (change)="setEvents()" type="datetime-local" class="form-control">
+        </div>
+        <div class="ml-3">
+            <label>{{textConstants.endDate}}</label>
+            <input [(ngModel)]="endDateTime" (change)="setEvents()" type="datetime-local" class="form-control">
+        </div>
+    </div>
+
+    <div class="location-dropdown">
+        <label>{{textConstants.location}}</label>
+        <select [(ngModel)]="eventLocationCountryCode" (change)="setEvents()" class="form-control">
+            <option *ngFor="let eventLocation of eventLocations" [value]="eventLocation.countryCode">
+                {{eventLocation.label}}
+            </option>
+        </select>
+    </div>
+
+    <button (click)="resetSearch()" class="btn btn-primary mt-auto">
+        {{textConstants.resetSearch}}
+    </button>
+</div>
+<div *ngFor="let event of events" class="card text-white bg-primary mb-3">
+    <div class="card-header">{{event.promoter?.name}}</div>
+    <div class="card-body">
+        <h4 class="card-title">{{event.name}}</h4>
+        <div class="card-text mt-3">
+            {{event.ticketLimit?.info}}
+        </div>
+        <img [src]="event.displayImage.url" alt="event-image" class="event-image mt-3">
+        <div class="card-text mt-3">
+            {{event.accessibility?.info}}
+        </div>
+        <div class="card-text mt-3 event-link">
+            <a [href]="event.url" target="_blank">{{textConstants.clickHereForMoreInfo}}</a>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="eventsObservable | async"></ng-container>
+
+
+
